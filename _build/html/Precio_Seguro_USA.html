@@ -1,0 +1,2758 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>📌 Introducción a la modelación: &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Precio_Seguro_USA';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Modelos de Regresión Lineal: Fundamentos, Estimación y Evaluación" href="Intro_Modelos_Lineales.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    📘 Introducción al Curso de Aprendizaje Estadístico
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Intro_Modelos_Lineales.html">Modelos de Regresión Lineal: Fundamentos, Estimación y Evaluación</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">📌 Introducción a la modelación:</a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPrecio_Seguro_USA.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Precio_Seguro_USA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📌 Introducción a la modelación:</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📌 Introducción a la modelación:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-del-modelo">📌 Resumen del Modelo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-aumentan-el-costo-coeficientes-positivos-y-significativos">🔍 Variables que AUMENTAN el Costo (coeficientes positivos y significativos)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-reducen-el-costo-coeficientes-negativos-y-significativos">✅ Variables que REDUCEN el Costo (coeficientes negativos y significativos)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-con-efecto-no-significativo-p-0-05">⚠️ Variables con Efecto No Significativo (p &gt; 0.05)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-general">🧠 Conclusión General</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>¿Cómo debo fijar el precio del seguro de auto en los Estados Unidos?</h1><h2>Introducción</h2>
+<p><strong>Contexto del Negocio.</strong> La capacidad de fijar el precio de una cotización de seguro correctamente tiene un impacto significativo en las decisiones de gestión y los estados financieros de las aseguradoras. Usted es el científico de datos en jefe de una nueva compañía de seguros que se enfoca en brindar seguros asequibles a los millennials. Tiene la tarea de evaluar el estado actual de las compañías de seguros para ver qué factores cobran primas los grandes proveedores de seguros. Afortunadamente para usted, su empresa ha compilado un conjunto de datos encuestando lo que la gente paga actualmente por los seguros de las grandes empresas. Sus hallazgos se utilizarán como base para desarrollar la oferta de seguros de automóviles millenial de su empresa. </p>
+<p><strong>Problema de Negocio.</strong> Su tarea es construir un modelo <strong>mínimo</strong> para predecir el costo del seguro a partir del conjunto de datos usando varias características de un asegurado.</p>
+<p><strong>Contexto Analítico.</strong> Los datos residen en un archivo CSV que se ha limpiado previamente para usted y se puede leer directamente. A lo largo del caso, estará iterando en su modelo inicial muchas veces en función de las dificultades comunes que surgen y que discutimos en casos anteriores. Utilizará el paquete <code>statsmodels</code> de Python para crear y analizar estos modelos lineales.</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Load relevant packages</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w">                  </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">                   </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w">       </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w">                 </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">multiple_linear_regression</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultipleLinearRegression</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span>
+
+<span class="c1"># This statement allow to display plot without asking to </span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># always make it pretty </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### Load relevant packages</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w">                  </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">                   </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w">       </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<h2>Explorando los datos</h2><p>En primer lugar, cargamos la información disponible para el análisis de la información.</p>
+<p>Las siguientes son las columnas en el conjunto de datos.:</p>
+<ol>
+<li><strong>state</strong>: Estado donde ocurrió el punto de compra</li>
+<li><strong>group_size</strong>: ¿Cuántas personas estarán cubiertas por la póliza? (1, 2, 3 o 4) </li>
+<li><strong>homeowner</strong>: Si el cliente posee una casa (0=no, 1=si)</li>
+<li><strong>car_age</strong>: Antigüedad del carro del cliente (Cuántos años tiene el carro)</li>
+<li><strong>car_value</strong>: Valor del coche cuando era nuevo</li>
+<li><strong>risk_factor</strong>: Una evaluación ordinal de cuán arriesgado es el cliente (0,1, 2, 3, 4) </li>
+<li><strong>age_oldest</strong>: Edad de la persona de mayor edad en el grupo del cliente</li>
+<li><strong>age_youngest</strong>: Edad de la persona más joven en el grupo del cliente</li>
+<li><strong>married_couple</strong>: ¿El grupo de clientes contiene una pareja casada? (0=no, 1=si) </li>
+<li><strong>C_previous</strong>: Lo que el cliente tenía anteriormente o tiene actualmente para la opción de producto C (0=ninguna, 1, 2, 3,4)</li>
+<li><strong>duration_previous</strong>: Cuánto tiempo (en años) el cliente estuvo cubierto por su emisor anterior</li>
+<li><strong>A,B,C,D,E,F,G</strong>: Las opciones de cobertura:</li>
+<li><strong>A</strong>: Colisión (niveles: 0, 1, 2);</li>
+<li><strong>B</strong>: Remolque (levels: 0, 1);</li>
+<li><strong>C</strong>: Daños corporales (niveles: 1, 2, 3, 4);</li>
+<li><strong>D</strong>: Daño a la propiedad (niveles 1, 2, 3);</li>
+<li><strong>E</strong>: Reembolso de alquiler (niveles: 0, 1);</li>
+<li><strong>F</strong>: Exhaustiva (niveles: 0, 1, 2, 3);</li>
+<li><strong>G</strong>: Protección Médica/Lesiones Personales (niveles: 1, 2, 3, 4)</li>
+<li><strong>cost</strong>: costo de las opciones de cobertura cotizadas </li>
+</ol><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Allstate-cost-cleaned.csv&#39;</span><span class="p">,</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># indicate categorical variables</span>
+        <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;car_value&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;married_couple&#39;</span><span class="p">:</span><span class="s1">&#39;category&#39;</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>state</th>
+      <th>group_size</th>
+      <th>homeowner</th>
+      <th>car_age</th>
+      <th>car_value</th>
+      <th>risk_factor</th>
+      <th>age_oldest</th>
+      <th>age_youngest</th>
+      <th>married_couple</th>
+      <th>C_previous</th>
+      <th>duration_previous</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>G</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>9</td>
+      <td>f</td>
+      <td>0.0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>9.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>543</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>9</td>
+      <td>f</td>
+      <td>0.0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>9.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>611</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>PA</td>
+      <td>1</td>
+      <td>1</td>
+      <td>7</td>
+      <td>f</td>
+      <td>0.0</td>
+      <td>74</td>
+      <td>74</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>15.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>691</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>PA</td>
+      <td>1</td>
+      <td>1</td>
+      <td>7</td>
+      <td>f</td>
+      <td>0.0</td>
+      <td>74</td>
+      <td>74</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>15.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>695</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>AR</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>d</td>
+      <td>4.0</td>
+      <td>26</td>
+      <td>26</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>628</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Es necesario realizar una transformación de un par de columnas para el correcto manejo posterior de la información.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span> <span class="o">=</span> <span class="n">Datos</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;C_previous&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;C_previous&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+<span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;risk_factor&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;risk_factor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15483, 19)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>group_size</th>
+      <th>homeowner</th>
+      <th>car_age</th>
+      <th>car_value</th>
+      <th>risk_factor</th>
+      <th>age_oldest</th>
+      <th>age_youngest</th>
+      <th>married_couple</th>
+      <th>C_previous</th>
+      <th>duration_previous</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>G</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>9</td>
+      <td>f</td>
+      <td>0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>0</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>543</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>9</td>
+      <td>f</td>
+      <td>0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>0</td>
+      <td>3</td>
+      <td>9.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>611</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PA</td>
+      <td>1</td>
+      <td>1</td>
+      <td>7</td>
+      <td>f</td>
+      <td>0</td>
+      <td>74</td>
+      <td>74</td>
+      <td>0</td>
+      <td>2</td>
+      <td>15.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>691</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PA</td>
+      <td>1</td>
+      <td>1</td>
+      <td>7</td>
+      <td>f</td>
+      <td>0</td>
+      <td>74</td>
+      <td>74</td>
+      <td>0</td>
+      <td>2</td>
+      <td>15.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>695</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>d</td>
+      <td>4</td>
+      <td>26</td>
+      <td>26</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>628</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AR</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>d</td>
+      <td>4</td>
+      <td>26</td>
+      <td>26</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>625</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AR</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>d</td>
+      <td>4</td>
+      <td>26</td>
+      <td>26</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>628</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>596</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>711</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>722</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>group_size</th>
+      <th>homeowner</th>
+      <th>car_age</th>
+      <th>car_value</th>
+      <th>risk_factor</th>
+      <th>age_oldest</th>
+      <th>age_youngest</th>
+      <th>married_couple</th>
+      <th>C_previous</th>
+      <th>duration_previous</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>G</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>596</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>711</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>722</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>722</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>673</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>group_size</th>
+      <th>homeowner</th>
+      <th>car_age</th>
+      <th>car_value</th>
+      <th>risk_factor</th>
+      <th>age_oldest</th>
+      <th>age_youngest</th>
+      <th>married_couple</th>
+      <th>C_previous</th>
+      <th>duration_previous</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>G</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>596</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>711</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>722</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>OK</td>
+      <td>1</td>
+      <td>0</td>
+      <td>13</td>
+      <td>f</td>
+      <td>3</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>722</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 15483 entries, 0 to 15482
+Data columns (total 19 columns):
+ #   Column             Non-Null Count  Dtype   
+---  ------             --------------  -----   
+ 0   state              15483 non-null  category
+ 1   group_size         15483 non-null  int64   
+ 2   homeowner          15483 non-null  int64   
+ 3   car_age            15483 non-null  int64   
+ 4   car_value          15435 non-null  category
+ 5   risk_factor        15483 non-null  int64   
+ 6   age_oldest         15483 non-null  int64   
+ 7   age_youngest       15483 non-null  int64   
+ 8   married_couple     15483 non-null  category
+ 9   C_previous         15483 non-null  int64   
+ 10  duration_previous  15483 non-null  float64 
+ 11  A                  15483 non-null  category
+ 12  B                  15483 non-null  category
+ 13  C                  15483 non-null  category
+ 14  D                  15483 non-null  category
+ 15  E                  15483 non-null  category
+ 16  F                  15483 non-null  category
+ 17  G                  15483 non-null  category
+ 18  cost               15483 non-null  int64   
+dtypes: category(10), float64(1), int64(8)
+memory usage: 1.2 MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;cost&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    15483.000000
+mean       633.947878
+std         47.336855
+min        354.000000
+25%        602.000000
+50%        633.000000
+75%        664.000000
+max        842.000000
+Name: cost, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿Cómo varía el costo promedio de la póliza según el nivel de cobertura por daños corporales (opción C) seleccionado por los clientes?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="p">[[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;cost&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\legion\AppData\Local\Temp\ipykernel_28376\3048440440.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  Datos[[&#39;C&#39;,&#39;cost&#39;]].groupby([&#39;C&#39;]).mean().reset_index()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>634.172544</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>633.882897</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>634.327139</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>631.157494</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Aunque se esperaría que a mayor nivel de cobertura por daños corporales (opción C) el costo de la póliza aumente, los datos muestran que el costo promedio es relativamente similar entre los niveles 1 a 3, y curiosamente es más bajo en el nivel 4. Esto sugiere que el nivel de cobertura no está fuertemente asociado al costo final, o que podrían estar influyendo otros factores en el precio de la póliza.</p>
+<p>Ahora, ¿qué tanta variabilidad existe en el costo de la póliza para cada nivel de cobertura por daños corporales (opción C)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="p">[[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;cost&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\legion\AppData\Local\Temp\ipykernel_28376\566558839.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  Datos[[&#39;C&#39;,&#39;cost&#39;]].groupby([&#39;C&#39;]).std().reset_index()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>51.745039</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>44.545519</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>45.985313</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>42.895880</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>El costo de la póliza presenta una mayor variabilidad para el nivel de cobertura 1 (desviación estándar ≈ 51.75), lo cual indica que los clientes que eligen este nivel pueden estar recibiendo pólizas con un rango más amplio de precios. A medida que aumenta el nivel de cobertura (hasta el nivel 4), la variabilidad del costo disminuye, lo que sugiere que las pólizas más completas tienen precios más estandarizados.</p>
+<p>Ahora, nos surge una nueva pregunta:</p>
+<p>¿Cómo interactúan los niveles de cobertura por colisión (A) y por daños corporales (C) en el costo promedio de la póliza, y qué implicaciones puede tener esto en la interpretación marginal del efecto de una sola cobertura?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">Datos</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+    <span class="n">values</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\legion\AppData\Local\Temp\ipykernel_28376\2108797613.py:1: FutureWarning: The default value of observed=False is deprecated and will change to observed=True in a future version of pandas. Specify observed=False to silence this warning and retain the current behavior
+  pd.pivot_table(
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>A</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th>C</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>602.224906</td>
+      <td>653.065246</td>
+      <td>660.334877</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>604.126536</td>
+      <td>644.506934</td>
+      <td>643.364611</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>602.838471</td>
+      <td>637.731672</td>
+      <td>646.545455</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>592.985507</td>
+      <td>635.839633</td>
+      <td>638.100000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Cuando se analiza solo la variable <code class="docutils literal notranslate"><span class="pre">C</span></code>, parece que el costo promedio disminuye al aumentar el nivel de cobertura por daños corporales. Sin embargo, al desagregar por niveles de <code class="docutils literal notranslate"><span class="pre">A</span></code> (colisión), se observa que dentro de cada nivel de <code class="docutils literal notranslate"><span class="pre">A</span></code> el costo promedio también disminuye con <code class="docutils literal notranslate"><span class="pre">C</span></code>, pero con diferentes tasas. Esta variación sugiere que la cobertura por colisión puede estar actuando como una variable de confusión: modifica el efecto observado de <code class="docutils literal notranslate"><span class="pre">C</span></code> sobre el costo. Este patrón es una manifestación típica de la <strong>paradoja de Simpson</strong>, donde la tendencia global puede ocultar o invertir relaciones existentes a nivel subgrupo.</p>
+<p>Ahora, creamos una pequeña función que permite realizar diagramas de violín entre una variable categórica y nuestra variable de respuesta, con el fin de encontrar algunos patrones adicionales que pueden ser útiles a la hora de decidir si algunas de estas variables pueden aportar de manera significativa a explicar la variabilidad en los costos de los seguros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">violingraphs</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+    <span class="c1">#var es la variable sobre la que quiero segmentar el gráfico de violín</span>
+    
+    <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="n">var</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">Datos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_variable</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;homeowner&#39;</span><span class="p">,</span><span class="s1">&#39;group_size&#39;</span><span class="p">],</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Variable:&quot;</span><span class="p">,</span>
+    <span class="n">disable</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ebcbed460f91a3e3b8585a6c8abcc33cb234d6c1d962f8ac8c5b672854b30a3b.png" src="_images/ebcbed460f91a3e3b8585a6c8abcc33cb234d6c1d962f8ac8c5b672854b30a3b.png" />
+<img alt="_images/6b6e543f1565ca13329937a3273fbbebf5ed7ce76e764dd1955bfb3fa2779f2e.png" src="_images/6b6e543f1565ca13329937a3273fbbebf5ed7ce76e764dd1955bfb3fa2779f2e.png" />
+<img alt="_images/1a849650957101633e7455e4f9d4437c28b317f653eb7c8dd289cb4607e0ffdd.png" src="_images/1a849650957101633e7455e4f9d4437c28b317f653eb7c8dd289cb4607e0ffdd.png" />
+<img alt="_images/99b8b0b9ae32f39dd1ea7912595c70af2a5e4b0cbe2a74b08c335d5e1cf192b4.png" src="_images/99b8b0b9ae32f39dd1ea7912595c70af2a5e4b0cbe2a74b08c335d5e1cf192b4.png" />
+<img alt="_images/ac9626e8eebc0b088b7d39a3dfef29b57b7007a6bd024a36b424a04c4896b99e.png" src="_images/ac9626e8eebc0b088b7d39a3dfef29b57b7007a6bd024a36b424a04c4896b99e.png" />
+<img alt="_images/eb9bdc1c6ed7f634bdd298501ef41d483ce95c769c80201b7dca3ae0e1825788.png" src="_images/eb9bdc1c6ed7f634bdd298501ef41d483ce95c769c80201b7dca3ae0e1825788.png" />
+<img alt="_images/45e5cce0f22bffd780d2fd508341e3636de8a3d6d52b01fa7a279764f28243a5.png" src="_images/45e5cce0f22bffd780d2fd508341e3636de8a3d6d52b01fa7a279764f28243a5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">violingraphs</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="n">set_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "81e9fc156559448c94e0eeeda32fa817", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.violingraphs(var)&gt;
+</pre></div>
+</div>
+<img alt="_images/4a56684c6990007eb6fb718932e3c2c826d9ae0274a6aacd2df831c1faa51804.png" src="_images/4a56684c6990007eb6fb718932e3c2c826d9ae0274a6aacd2df831c1faa51804.png" />
+<img alt="_images/ebcbed460f91a3e3b8585a6c8abcc33cb234d6c1d962f8ac8c5b672854b30a3b.png" src="_images/ebcbed460f91a3e3b8585a6c8abcc33cb234d6c1d962f8ac8c5b672854b30a3b.png" />
+<img alt="_images/6b6e543f1565ca13329937a3273fbbebf5ed7ce76e764dd1955bfb3fa2779f2e.png" src="_images/6b6e543f1565ca13329937a3273fbbebf5ed7ce76e764dd1955bfb3fa2779f2e.png" />
+<img alt="_images/1a849650957101633e7455e4f9d4437c28b317f653eb7c8dd289cb4607e0ffdd.png" src="_images/1a849650957101633e7455e4f9d4437c28b317f653eb7c8dd289cb4607e0ffdd.png" />
+<img alt="_images/99b8b0b9ae32f39dd1ea7912595c70af2a5e4b0cbe2a74b08c335d5e1cf192b4.png" src="_images/99b8b0b9ae32f39dd1ea7912595c70af2a5e4b0cbe2a74b08c335d5e1cf192b4.png" />
+<img alt="_images/ac9626e8eebc0b088b7d39a3dfef29b57b7007a6bd024a36b424a04c4896b99e.png" src="_images/ac9626e8eebc0b088b7d39a3dfef29b57b7007a6bd024a36b424a04c4896b99e.png" />
+<img alt="_images/eb9bdc1c6ed7f634bdd298501ef41d483ce95c769c80201b7dca3ae0e1825788.png" src="_images/eb9bdc1c6ed7f634bdd298501ef41d483ce95c769c80201b7dca3ae0e1825788.png" />
+<img alt="_images/45e5cce0f22bffd780d2fd508341e3636de8a3d6d52b01fa7a279764f28243a5.png" src="_images/45e5cce0f22bffd780d2fd508341e3636de8a3d6d52b01fa7a279764f28243a5.png" />
+</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>¿Incluir en el modelo?</p></th>
+<th class="head"><p>Justificación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">group_size</span></code></p></td>
+<td><p>✅ Sí</p></td>
+<td><p>Asociado a economía de escala y menor variabilidad en el costo</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">homeowner</span></code></p></td>
+<td><p>✅ Sí</p></td>
+<td><p>Proxy de estabilidad financiera o menor riesgo</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">F</span></code></p></td>
+<td><p>✅ Sí</p></td>
+<td><p>Coberturas más altas se asocian con mayor costo</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">E</span></code></p></td>
+<td><p>✅ Sí</p></td>
+<td><p>Claramente incrementa el costo promedio de la póliza</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C</span></code></p></td>
+<td><p>✅ Sí (con cautela)</p></td>
+<td><p>Patrón inverso al esperado; revisar interacciones (posible paradoja de Simpson)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">D</span></code></p></td>
+<td><p>🟨 Tal vez</p></td>
+<td><p>Diferencias leves entre niveles, impacto limitado</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td><p>🟨 Tal vez</p></td>
+<td><p>Ligeramente más costoso, pero efecto marginal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
+<td><p>✅ Sí</p></td>
+<td><p>Relación clara y directa con el incremento del costo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>¿Cómo influye la antigüedad del vehículo (<code class="docutils literal notranslate"><span class="pre">car_age</span></code>) en el costo de la póliza (<code class="docutils literal notranslate"><span class="pre">cost</span></code>)? ¿Existe una relación lineal o no lineal entre ambas variables?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Datos</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;car_age&#39;, ylabel=&#39;cost&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/6f47fc9b999a83e8159cb6f738df853a3150bf23c45a623ec1124bf4667638be.png" src="_images/6f47fc9b999a83e8159cb6f738df853a3150bf23c45a623ec1124bf4667638be.png" />
+</div>
+</div>
+<p>El gráfico sugiere una leve tendencia decreciente: a medida que el vehículo es más antiguo, el costo promedio tiende a disminuir. Sin embargo, la relación no parece estrictamente lineal, y se observa una mayor dispersión para autos más viejos, especialmente después de los 20 años. Esto podría indicar que la variable <code class="docutils literal notranslate"><span class="pre">car_age</span></code> tiene un efecto no lineal o que intervienen otros factores como el valor original del vehículo o el tipo de cobertura elegida.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D1</span><span class="o">=</span><span class="n">Datos</span><span class="p">[[</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="s1">&#39;cost&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;car_age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">D1</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;car_age&#39;, ylabel=&#39;cost&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/45ddef174de89ec8ea3255533426e190a5d75bb97ed04d628c2c74ce310f17de.png" src="_images/45ddef174de89ec8ea3255533426e190a5d75bb97ed04d628c2c74ce310f17de.png" />
+</div>
+</div>
+<p>Al promediar el costo por cada edad del vehículo, se observa una tendencia general decreciente: a mayor antigüedad del carro, menor es el costo promedio de la póliza. Sin embargo, a partir de los 30 años, esta relación deja de ser estable y aparecen valores atípicos con incrementos inesperados en el costo. Esto puede deberse a baja frecuencia de observaciones en esas edades extremas o a características particulares de vehículos muy antiguos (e.g., autos clásicos o de colección).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Datos</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">Datos</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="n">Datos</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D3</span><span class="o">=</span><span class="n">Datos</span><span class="p">[[</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">D3</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="n">D3</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;car_age&#39;</span><span class="p">,</span><span class="s1">&#39;age_youngest&#39;</span><span class="p">,</span><span class="s1">&#39;homeowner&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;group_size&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">var</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">variables</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;homeowner&#39;</span><span class="p">,</span><span class="s1">&#39;group_size&#39;</span><span class="p">]:</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">Datos</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">Datos</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#B3107F&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7516a6c482096c834c523b32f1cf5d9d92ebae1f43ec2a4c44db389c0d59329a.png" src="_images/7516a6c482096c834c523b32f1cf5d9d92ebae1f43ec2a4c44db389c0d59329a.png" />
+</div>
+</div>
+<section id="introduccion-a-la-modelacion">
+<h1>📌 Introducción a la modelación:<a class="headerlink" href="#introduccion-a-la-modelacion" title="Link to this heading">#</a></h1>
+<p>Para preparar los datos de cara al ajuste de modelos predictivos, se realizó una transformación de las variables categóricas mediante codificación one-hot (dummies). En particular, se seleccionaron variables cualitativas relevantes como las coberturas (<code class="docutils literal notranslate"><span class="pre">A</span></code> a <code class="docutils literal notranslate"><span class="pre">G</span></code>), condiciones del cliente (<code class="docutils literal notranslate"><span class="pre">homeowner</span></code>, <code class="docutils literal notranslate"><span class="pre">married_couple</span></code>), características del grupo (<code class="docutils literal notranslate"><span class="pre">group_size</span></code>), historial (<code class="docutils literal notranslate"><span class="pre">C_previous</span></code>, <code class="docutils literal notranslate"><span class="pre">risk_factor</span></code>) y valor del vehículo (<code class="docutils literal notranslate"><span class="pre">car_value</span></code>). Utilizando <code class="docutils literal notranslate"><span class="pre">pd.get_dummies</span></code> con la opción <code class="docutils literal notranslate"><span class="pre">drop_first=True</span></code>, se evitó la colinealidad perfecta entre variables, facilitando la posterior interpretación de los coeficientes en modelos lineales y asegurando la compatibilidad con algoritmos que requieren variables numéricas. Este preprocesamiento permitió construir una matriz de diseño adecuada para el modelado supervisado del costo de la póliza.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos2</span> <span class="o">=</span> <span class="n">Datos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">variables2</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;homeowner&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;group_size&#39;</span><span class="p">,</span><span class="s1">&#39;car_value&#39;</span><span class="p">,</span><span class="s1">&#39;C_previous&#39;</span><span class="p">,</span><span class="s1">&#39;married_couple&#39;</span><span class="p">,</span><span class="s1">&#39;risk_factor&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables2</span><span class="p">:</span>
+    <span class="n">Datos2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">Datos2</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">var</span><span class="p">],</span><span class="n">prefix</span><span class="o">=</span><span class="n">var</span><span class="p">,</span><span class="n">prefix_sep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>car_age</th>
+      <th>age_oldest</th>
+      <th>age_youngest</th>
+      <th>duration_previous</th>
+      <th>cost</th>
+      <th>homeowner_1</th>
+      <th>A_1</th>
+      <th>A_2</th>
+      <th>B_1</th>
+      <th>...</th>
+      <th>car_value_i</th>
+      <th>C_previous_1</th>
+      <th>C_previous_2</th>
+      <th>C_previous_3</th>
+      <th>C_previous_4</th>
+      <th>married_couple_1</th>
+      <th>risk_factor_1</th>
+      <th>risk_factor_2</th>
+      <th>risk_factor_3</th>
+      <th>risk_factor_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>OK</td>
+      <td>9</td>
+      <td>24</td>
+      <td>24</td>
+      <td>9.0</td>
+      <td>543</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>OK</td>
+      <td>9</td>
+      <td>24</td>
+      <td>24</td>
+      <td>9.0</td>
+      <td>611</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PA</td>
+      <td>7</td>
+      <td>74</td>
+      <td>74</td>
+      <td>15.0</td>
+      <td>691</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PA</td>
+      <td>7</td>
+      <td>74</td>
+      <td>74</td>
+      <td>15.0</td>
+      <td>695</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR</td>
+      <td>4</td>
+      <td>26</td>
+      <td>26</td>
+      <td>1.0</td>
+      <td>628</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AR</td>
+      <td>4</td>
+      <td>26</td>
+      <td>26</td>
+      <td>1.0</td>
+      <td>625</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AR</td>
+      <td>4</td>
+      <td>26</td>
+      <td>26</td>
+      <td>1.0</td>
+      <td>628</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>OK</td>
+      <td>13</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>596</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>OK</td>
+      <td>13</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>711</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>OK</td>
+      <td>13</td>
+      <td>22</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>722</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 42 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">Datos2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="s1">&#39;state&#39;</span><span class="p">])</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">Datos2</span><span class="p">[</span><span class="s1">&#39;cost&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlr</span> <span class="o">=</span> <span class="n">MultipleLinearRegression</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">)</span>
+<span class="n">mlr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">mlr</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiple Linear Regression Results
+========================================
+Method: OLS
+Target Variable: cost
+
+Feature Names:
+  1. car_age
+  2. age_oldest
+  3. age_youngest
+  4. duration_previous
+  5. homeowner_1
+  6. A_1
+  7. A_2
+  8. B_1
+  9. C_2
+  10. C_3
+  11. C_4
+  12. D_2
+  13. D_3
+  14. E_1
+  15. F_1
+  16. F_2
+  17. F_3
+  18. G_2
+  19. G_3
+  20. G_4
+  21. group_size_2
+  22. group_size_3
+  23. group_size_4
+  24. car_value_b
+  25. car_value_c
+  26. car_value_d
+  27. car_value_e
+  28. car_value_f
+  29. car_value_g
+  30. car_value_h
+  31. car_value_i
+  32. C_previous_1
+  33. C_previous_2
+  34. C_previous_3
+  35. C_previous_4
+  36. married_couple_1
+  37. risk_factor_1
+  38. risk_factor_2
+  39. risk_factor_3
+  40. risk_factor_4
+
+Model Summary:
+----------------------------------------
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   cost   R-squared:                       0.338
+Model:                            OLS   Adj. R-squared:                  0.336
+Method:                 Least Squares   F-statistic:                     197.2
+Date:                Thu, 05 Jun 2025   Prob (F-statistic):               0.00
+Time:                        20:04:27   Log-Likelihood:                -78497.
+No. Observations:               15483   AIC:                         1.571e+05
+Df Residuals:                   15442   BIC:                         1.574e+05
+Df Model:                          40                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P&gt;|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const               681.6324      4.926    138.368      0.000     671.976     691.288
+car_age              -0.8856      0.065    -13.723      0.000      -1.012      -0.759
+age_oldest            0.6874      0.062     11.042      0.000       0.565       0.809
+age_youngest         -0.9373      0.061    -15.358      0.000      -1.057      -0.818
+duration_previous    -1.1634      0.073    -16.046      0.000      -1.306      -1.021
+homeowner_1         -14.4542      0.697    -20.743      0.000     -15.820     -13.088
+A_1                  48.1902      1.242     38.786      0.000      45.755      50.626
+A_2                  51.1959      1.540     33.240      0.000      48.177      54.215
+B_1                   0.6011      0.740      0.812      0.417      -0.849       2.051
+C_2                  -1.2747      1.121     -1.137      0.255      -3.471       0.922
+C_3                  -2.7092      1.132     -2.394      0.017      -4.927      -0.491
+C_4                   3.8686      1.787      2.164      0.030       0.365       7.372
+D_2                   2.3703      1.142      2.075      0.038       0.131       4.610
+D_3                   1.6441      1.175      1.399      0.162      -0.659       3.947
+E_1                  15.8025      0.811     19.493      0.000      14.213      17.391
+F_1                 -16.9450      1.109    -15.277      0.000     -19.119     -14.771
+F_2                 -18.1550      1.026    -17.697      0.000     -20.166     -16.144
+F_3                 -19.7330      1.924    -10.258      0.000     -23.504     -15.962
+G_2                  11.2231      0.861     13.031      0.000       9.535      12.911
+G_3                   8.8424      0.981      9.014      0.000       6.920      10.765
+G_4                   9.3970      1.158      8.117      0.000       7.128      11.666
+group_size_2         -0.6026      1.513     -0.398      0.690      -3.568       2.363
+group_size_3          5.3774      3.848      1.398      0.162      -2.164      12.919
+group_size_4         23.8302     10.716      2.224      0.026       2.825      44.835
+car_value_b         -51.6345      7.655     -6.746      0.000     -66.638     -36.631
+car_value_c         -48.0043      4.844     -9.909      0.000     -57.500     -38.509
+car_value_d         -42.6877      4.628     -9.223      0.000     -51.759     -33.616
+car_value_e         -42.0481      4.604     -9.134      0.000     -51.072     -33.024
+car_value_f         -41.3066      4.619     -8.943      0.000     -50.360     -32.253
+car_value_g         -38.5412      4.657     -8.275      0.000     -47.670     -29.412
+car_value_h         -29.6918      4.850     -6.122      0.000     -39.198     -20.185
+car_value_i          -3.3966      6.129     -0.554      0.579     -15.410       8.617
+C_previous_1         -3.2321      1.585     -2.039      0.042      -6.340      -0.125
+C_previous_2        -13.2158      1.707     -7.742      0.000     -16.562      -9.870
+C_previous_3        -15.2618      1.597     -9.554      0.000     -18.393     -12.131
+C_previous_4        -23.8697      1.843    -12.950      0.000     -27.483     -20.257
+married_couple_1     -5.7283      1.379     -4.154      0.000      -8.432      -3.025
+risk_factor_1       -16.9991      1.099    -15.472      0.000     -19.153     -14.845
+risk_factor_2        -7.6253      1.038     -7.346      0.000      -9.660      -5.591
+risk_factor_3        -0.6258      0.923     -0.678      0.498      -2.436       1.184
+risk_factor_4        -0.4824      0.938     -0.514      0.607      -2.322       1.357
+==============================================================================
+Omnibus:                      576.011   Durbin-Watson:                   0.754
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1010.036
+Skew:                           0.312   Prob(JB):                    4.72e-220
+Kurtosis:                       4.085   Cond. No.                     3.07e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.07e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">mlr</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="s1">&#39;coef&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;std_err&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">bse</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">tvalues</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;pval&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">pvalues</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;[0.025&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">conf_int</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;0.975]&#39;</span><span class="p">:</span> <span class="n">results</span><span class="o">.</span><span class="n">conf_int</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DataFrame con coeficientes y p-valores (debes tenerlo cargado como &#39;df&#39; previamente)</span>
+<span class="n">df_sig</span> <span class="o">=</span> <span class="n">summary_df</span><span class="p">[</span><span class="n">summary_df</span><span class="p">[</span><span class="s1">&#39;pval&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;coef&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_sig</span> <span class="o">=</span> <span class="n">df_sig</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;feature != &#39;const&#39;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Colores por signo</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">df_sig</span><span class="p">[</span><span class="s1">&#39;coef&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="c1"># Gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">df_sig</span><span class="p">[</span><span class="s1">&#39;feature&#39;</span><span class="p">],</span> <span class="n">df_sig</span><span class="p">[</span><span class="s1">&#39;coef&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coeficientes Significativos en el Modelo de Regresión Lineal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Coeficiente&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Variable&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/79b6ef3f100a74bf9255307f97a992cbfd9a9887e1c2a16a0b9df76ec337cd8e.png" src="_images/79b6ef3f100a74bf9255307f97a992cbfd9a9887e1c2a16a0b9df76ec337cd8e.png" />
+</div>
+</div>
+</section>
+<section id="resumen-del-modelo">
+<h1>📌 Resumen del Modelo<a class="headerlink" href="#resumen-del-modelo" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>R² = 0.338</strong>: El modelo explica aproximadamente el <strong>34% de la variabilidad</strong> en el costo de la póliza.</p></li>
+<li><p><strong>Significancia global (F-test p &lt; 0.001)</strong>: El conjunto de variables incluidas es estadísticamente significativo.</p></li>
+<li><p><strong>Número de observaciones</strong>: 15,483 pólizas analizadas.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="variables-que-aumentan-el-costo-coeficientes-positivos-y-significativos">
+<h1>🔍 Variables que AUMENTAN el Costo (coeficientes positivos y significativos)<a class="headerlink" href="#variables-que-aumentan-el-costo-coeficientes-positivos-y-significativos" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Interpretación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">A_1</span></code>, <code class="docutils literal notranslate"><span class="pre">A_2</span></code></p></td>
+<td><p>Mayor cobertura de colisión implica mayor costo.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">E_1</span></code></p></td>
+<td><p>Incluir reembolso de alquiler eleva el costo.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">G_2</span></code>, <code class="docutils literal notranslate"><span class="pre">G_3</span></code>, <code class="docutils literal notranslate"><span class="pre">G_4</span></code></p></td>
+<td><p>Cobertura médica mayor está asociada a costos más altos.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">group_size_4</span></code></p></td>
+<td><p>Grupos grandes tienden a tener pólizas más costosas.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">age_oldest</span></code></p></td>
+<td><p>A mayor edad del miembro más viejo del grupo, mayor costo.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+<section id="variables-que-reducen-el-costo-coeficientes-negativos-y-significativos">
+<h1>✅ Variables que REDUCEN el Costo (coeficientes negativos y significativos)<a class="headerlink" href="#variables-que-reducen-el-costo-coeficientes-negativos-y-significativos" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Interpretación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">car_age</span></code></p></td>
+<td><p>Autos más antiguos suelen tener pólizas más baratas.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">homeowner_1</span></code></p></td>
+<td><p>Ser propietario de vivienda está asociado a menor costo.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">F_1</span></code>, <code class="docutils literal notranslate"><span class="pre">F_2</span></code>, <code class="docutils literal notranslate"><span class="pre">F_3</span></code></p></td>
+<td><p>Cobertura exhaustiva en niveles altos reduce el costo, posiblemente por interacción con otras coberturas.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">risk_factor_1</span></code>, <code class="docutils literal notranslate"><span class="pre">risk_factor_2</span></code></p></td>
+<td><p>Menor nivel de riesgo percibido implica menor costo.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">car_value_*</span></code></p></td>
+<td><p>Vehículos de menor valor tienden a tener costos más bajos.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">duration_previous</span></code></p></td>
+<td><p>Clientes con más años cubiertos previamente pagan menos.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C_previous_1–4</span></code></p></td>
+<td><p>Haber tenido cobertura previa, especialmente más alta, reduce el costo actual.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">married_couple_1</span></code></p></td>
+<td><p>Grupos con pareja casada presentan menores costos promedio.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+<section id="variables-con-efecto-no-significativo-p-0-05">
+<h1>⚠️ Variables con Efecto No Significativo (p &gt; 0.05)<a class="headerlink" href="#variables-con-efecto-no-significativo-p-0-05" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">B_1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group_size_2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group_size_3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">risk_factor_3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">risk_factor_4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">car_value_i</span></code></p></li>
+</ul>
+<p>Estas variables podrían considerarse prescindibles en modelos simplificados, dado su bajo aporte explicativo.</p>
+<hr class="docutils" />
+</section>
+<section id="conclusion-general">
+<h1>🧠 Conclusión General<a class="headerlink" href="#conclusion-general" title="Link to this heading">#</a></h1>
+<p>El modelo identifica varias variables con efectos claros sobre el costo de la póliza. Entre los factores clave están:</p>
+<ul class="simple">
+<li><p>Antigüedad del vehículo (<code class="docutils literal notranslate"><span class="pre">car_age</span></code>)</p></li>
+<li><p>Tipo y nivel de cobertura (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code>)</p></li>
+<li><p>Perfil del cliente (<code class="docutils literal notranslate"><span class="pre">risk_factor</span></code>, <code class="docutils literal notranslate"><span class="pre">homeowner</span></code>, <code class="docutils literal notranslate"><span class="pre">married_couple</span></code>)</p></li>
+<li><p>Historial del cliente (<code class="docutils literal notranslate"><span class="pre">duration_previous</span></code>, <code class="docutils literal notranslate"><span class="pre">C_previous</span></code>)</p></li>
+<li><p>Valor del vehículo (<code class="docutils literal notranslate"><span class="pre">car_value_*</span></code>)</p></li>
+</ul>
+<p>Aunque el R² sugiere margen de mejora, el modelo ya ofrece información útil para orientar estrategias de <strong>tarifación</strong>, <strong>segmentación de clientes</strong> y <strong>diseño de productos aseguradores</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train2</span> <span class="o">=</span> <span class="n">Datos2</span><span class="p">[[</span><span class="s1">&#39;A_1&#39;</span><span class="p">,</span><span class="s1">&#39;A_2&#39;</span><span class="p">]]</span>
+<span class="n">mlr2</span> <span class="o">=</span> <span class="n">MultipleLinearRegression</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">)</span>
+<span class="n">mlr2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train2</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlr2</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiple Linear Regression Results
+========================================
+Method: OLS
+Target Variable: cost
+
+Feature Names:
+  1. A_1
+  2. A_2
+
+Model Summary:
+----------------------------------------
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   cost   R-squared:                       0.138
+Model:                            OLS   Adj. R-squared:                  0.138
+Method:                 Least Squares   F-statistic:                     1240.
+Date:                Thu, 05 Jun 2025   Prob (F-statistic):               0.00
+Time:                        20:44:37   Log-Likelihood:                -80541.
+No. Observations:               15483   AIC:                         1.611e+05
+Df Residuals:                   15480   BIC:                         1.611e+05
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        602.4374      0.730    825.409      0.000     601.007     603.868
+A_1           39.9359      0.853     46.830      0.000      38.264      41.607
+A_2           47.3826      1.239     38.250      0.000      44.954      49.811
+==============================================================================
+Omnibus:                      408.745   Durbin-Watson:                   0.719
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              575.603
+Skew:                           0.294   Prob(JB):                    1.02e-125
+Kurtosis:                       3.739   Cond. No.                         5.05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train3</span> <span class="o">=</span> <span class="n">Datos2</span><span class="p">[[</span><span class="s1">&#39;car_age&#39;</span><span class="p">]]</span>
+<span class="n">mlr3</span> <span class="o">=</span> <span class="n">MultipleLinearRegression</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">)</span>
+<span class="n">mlr3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train3</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlr3</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiple Linear Regression Results
+========================================
+Method: OLS
+Target Variable: cost
+
+Feature Names:
+  1. car_age
+
+Model Summary:
+----------------------------------------
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   cost   R-squared:                       0.065
+Model:                            OLS   Adj. R-squared:                  0.065
+Method:                 Least Squares   F-statistic:                     1081.
+Date:                Thu, 05 Jun 2025   Prob (F-statistic):          3.59e-229
+Time:                        20:44:37   Log-Likelihood:                -81169.
+No. Observations:               15483   AIC:                         1.623e+05
+Df Residuals:                   15481   BIC:                         1.624e+05
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        650.9680      0.635   1024.999      0.000     649.723     652.213
+car_age       -2.1143      0.064    -32.874      0.000      -2.240      -1.988
+==============================================================================
+Omnibus:                      245.604   Durbin-Watson:                   0.812
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              321.571
+Skew:                           0.220   Prob(JB):                     1.48e-70
+Kurtosis:                       3.553   Cond. No.                         17.2
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlr3</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">mse_resid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2094.694619131332)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_train3</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X_train3</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.92553546e-04, -1.58966162e-05],
+       [-1.58966162e-05,  1.97475315e-06]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.92553546e-04</span> <span class="o">*</span> <span class="mf">2094.694619131332</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.6350912349425533)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Datos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)[</span><span class="s1">&#39;cost&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\legion\AppData\Local\Temp\ipykernel_28376\152501647.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  Datos.groupby(&#39;A&#39;)[&#39;cost&#39;].mean().reset_index()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>602.437397</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>642.373250</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>649.820021</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get model summary</span>
+<span class="n">mlr</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiple Linear Regression Results
+========================================
+Method: OLS
+Target Variable: cost
+
+Feature Names:
+  1. car_age
+  2. age_oldest
+  3. age_youngest
+  4. duration_previous
+  5. homeowner_1
+  6. A_1
+  7. A_2
+  8. B_1
+  9. C_2
+  10. C_3
+  11. C_4
+  12. D_2
+  13. D_3
+  14. E_1
+  15. F_1
+  16. F_2
+  17. F_3
+  18. G_2
+  19. G_3
+  20. G_4
+  21. group_size_2
+  22. group_size_3
+  23. group_size_4
+  24. car_value_b
+  25. car_value_c
+  26. car_value_d
+  27. car_value_e
+  28. car_value_f
+  29. car_value_g
+  30. car_value_h
+  31. car_value_i
+  32. C_previous_1
+  33. C_previous_2
+  34. C_previous_3
+  35. C_previous_4
+  36. married_couple_1
+  37. risk_factor_1
+  38. risk_factor_2
+  39. risk_factor_3
+  40. risk_factor_4
+
+Model Summary:
+----------------------------------------
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   cost   R-squared:                       0.338
+Model:                            OLS   Adj. R-squared:                  0.336
+Method:                 Least Squares   F-statistic:                     197.2
+Date:                Thu, 05 Jun 2025   Prob (F-statistic):               0.00
+Time:                        20:44:37   Log-Likelihood:                -78497.
+No. Observations:               15483   AIC:                         1.571e+05
+Df Residuals:                   15442   BIC:                         1.574e+05
+Df Model:                          40                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P&gt;|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const               681.6324      4.926    138.368      0.000     671.976     691.288
+car_age              -0.8856      0.065    -13.723      0.000      -1.012      -0.759
+age_oldest            0.6874      0.062     11.042      0.000       0.565       0.809
+age_youngest         -0.9373      0.061    -15.358      0.000      -1.057      -0.818
+duration_previous    -1.1634      0.073    -16.046      0.000      -1.306      -1.021
+homeowner_1         -14.4542      0.697    -20.743      0.000     -15.820     -13.088
+A_1                  48.1902      1.242     38.786      0.000      45.755      50.626
+A_2                  51.1959      1.540     33.240      0.000      48.177      54.215
+B_1                   0.6011      0.740      0.812      0.417      -0.849       2.051
+C_2                  -1.2747      1.121     -1.137      0.255      -3.471       0.922
+C_3                  -2.7092      1.132     -2.394      0.017      -4.927      -0.491
+C_4                   3.8686      1.787      2.164      0.030       0.365       7.372
+D_2                   2.3703      1.142      2.075      0.038       0.131       4.610
+D_3                   1.6441      1.175      1.399      0.162      -0.659       3.947
+E_1                  15.8025      0.811     19.493      0.000      14.213      17.391
+F_1                 -16.9450      1.109    -15.277      0.000     -19.119     -14.771
+F_2                 -18.1550      1.026    -17.697      0.000     -20.166     -16.144
+F_3                 -19.7330      1.924    -10.258      0.000     -23.504     -15.962
+G_2                  11.2231      0.861     13.031      0.000       9.535      12.911
+G_3                   8.8424      0.981      9.014      0.000       6.920      10.765
+G_4                   9.3970      1.158      8.117      0.000       7.128      11.666
+group_size_2         -0.6026      1.513     -0.398      0.690      -3.568       2.363
+group_size_3          5.3774      3.848      1.398      0.162      -2.164      12.919
+group_size_4         23.8302     10.716      2.224      0.026       2.825      44.835
+car_value_b         -51.6345      7.655     -6.746      0.000     -66.638     -36.631
+car_value_c         -48.0043      4.844     -9.909      0.000     -57.500     -38.509
+car_value_d         -42.6877      4.628     -9.223      0.000     -51.759     -33.616
+car_value_e         -42.0481      4.604     -9.134      0.000     -51.072     -33.024
+car_value_f         -41.3066      4.619     -8.943      0.000     -50.360     -32.253
+car_value_g         -38.5412      4.657     -8.275      0.000     -47.670     -29.412
+car_value_h         -29.6918      4.850     -6.122      0.000     -39.198     -20.185
+car_value_i          -3.3966      6.129     -0.554      0.579     -15.410       8.617
+C_previous_1         -3.2321      1.585     -2.039      0.042      -6.340      -0.125
+C_previous_2        -13.2158      1.707     -7.742      0.000     -16.562      -9.870
+C_previous_3        -15.2618      1.597     -9.554      0.000     -18.393     -12.131
+C_previous_4        -23.8697      1.843    -12.950      0.000     -27.483     -20.257
+married_couple_1     -5.7283      1.379     -4.154      0.000      -8.432      -3.025
+risk_factor_1       -16.9991      1.099    -15.472      0.000     -19.153     -14.845
+risk_factor_2        -7.6253      1.038     -7.346      0.000      -9.660      -5.591
+risk_factor_3        -0.6258      0.923     -0.678      0.498      -2.436       1.184
+risk_factor_4        -0.4824      0.938     -0.514      0.607      -2.322       1.357
+==============================================================================
+Omnibus:                      576.011   Durbin-Watson:                   0.754
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1010.036
+Skew:                           0.312   Prob(JB):                    4.72e-220
+Kurtosis:                       4.085   Cond. No.                     3.07e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.07e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Validate assumptions</span>
+<span class="n">diagnostics</span> <span class="o">=</span> <span class="n">mlr</span><span class="o">.</span><span class="n">validate_assumptions</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                       <span class="n">plots</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;residuals&#39;</span><span class="p">,</span> <span class="s1">&#39;qq&#39;</span><span class="p">,</span> <span class="s1">&#39;leverage&#39;</span><span class="p">,</span> <span class="s1">&#39;cooks&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sampling 5000 records from 15483 for faster computation...
+Running statistical tests...
+- Computing Breusch-Pagan test...
+- Computing Durbin-Watson test...
+- Computing Shapiro-Wilk test...
+
+Generating diagnostic plots...
+Downsampling from 5000 to 1000 points for plotting...
+Generating residuals plot...
+Generating Q-Q plot...
+Generating leverage plot...
+Generating Cook&#39;s distance plot...
+</pre></div>
+</div>
+<img alt="_images/cd4080e5ed1581d7aa645ff310e72eb5cfab5b1667b2ffeb25637b6e1e466644.png" src="_images/cd4080e5ed1581d7aa645ff310e72eb5cfab5b1667b2ffeb25637b6e1e466644.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diagnostics</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;breusch_pagan_stat&#39;: 228.90924379320776,
+ &#39;breusch_pagan_pvalue&#39;: 2.5112013312147094e-28,
+ &#39;durbin_watson_stat&#39;: 2.013632257511746,
+ &#39;durbin_watson_pvalue&#39;: 0.0440481571055249,
+ &#39;shapiro_stat&#39;: 0.9870181106209632,
+ &#39;shapiro_pvalue&#39;: 4.734318400205819e-21}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Intro_Modelos_Lineales.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modelos de Regresión Lineal: Fundamentos, Estimación y Evaluación</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📌 Introducción a la modelación:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-del-modelo">📌 Resumen del Modelo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-aumentan-el-costo-coeficientes-positivos-y-significativos">🔍 Variables que AUMENTAN el Costo (coeficientes positivos y significativos)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-reducen-el-costo-coeficientes-negativos-y-significativos">✅ Variables que REDUCEN el Costo (coeficientes negativos y significativos)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-con-efecto-no-significativo-p-0-05">⚠️ Variables con Efecto No Significativo (p &gt; 0.05)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-general">🧠 Conclusión General</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
